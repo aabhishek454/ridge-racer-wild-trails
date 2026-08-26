@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>Ridge Racer: Wild Trails</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0a0a12;overflow:hidden;font-family:system-ui,sans-serif;touch-action:none;user-select:none}
+#ui{position:fixed;inset:0;pointer-events:none;z-index:10;color:#fff}
+#hud{display:flex;justify-content:space-between;padding:12px 16px;gap:8px;flex-wrap:wrap}
+.badge{background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 14px;font-weight:700}
+#speed{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);text-align:center;background:rgba(0,0,0,.6);border-radius:16px;padding:10px 24px;border:1px solid rgba(255,255,255,.15)}
+#speed .v{font-size:32px;font-weight:900}
+#speed .u{font-size:11px;opacity:.5}
+#controls{position:fixed;bottom:16px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;pointer-events:auto;z-index:20}
+.btn{width:88px;height:88px;border-radius:50%;border:3px solid rgba(255,255,255,.35);font-weight:900;font-size:14px;color:#fff}
+#brake{background:rgba(220,38,38,.85)}#gas{background:rgba(16,185,129,.85)}
+.btn:active{transform:scale(.95)}
+#menu,#over{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.82);backdrop-filter:blur(12px);pointer-events:auto}
+#menu h1{font-size:clamp(2rem,8vw,3.5rem);font-weight:900;background:linear-gradient(90deg,#67e8f9,#fff,#6ee7b7);-webkit-background-clip:text;color:transparent}
+#menu .sub{letter-spacing:.3em;color:#fbbf24;font-weight:700;margin:8px 0 28px}
+.play{background:linear-gradient(90deg,#10b981,#06b6d4);border:none;color:#fff;font-weight:900;font-size:20px;padding:16px 48px;border-radius:16px;cursor:pointer}
+#over h2{font-size:28px;font-weight:900;color:#f59e0b;margin-bottom:16px}
+#over .stats{background:rgba(255,255,255,.06);border-radius:16px;padding:16px 24px;margin-bottom:20px;min-width:240px}
+#over .stats div{display:flex;justify-content:space-between;padding:6px 0;font-size:14px}
+#event{position:fixed;top:30%;left:50%;transform:translate(-50%,-50%);font-weight:900;font-size:22px;background:linear-gradient(90deg,#f59e0b,#f97316);padding:12px 24px;border-radius:12px;opacity:0;z-index:15}
+#event.show{opacity:1}
+#pauseBtn{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;pointer-events:auto;z-index:20}
+.hidden{display:none!important}
+@media(min-width:768px){#controls{display:none}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui">
+<div id="hud">
+<div class="badge"><div style="font-size:10px;opacity:.6">DISTANCE</div><div id="dist">0 m</div></div>
+<div class="badge"><span style="color:#facc15">●</span> <span id="coins">0</span></div>
+<div class="badge"><div style="font-size:10px;opacity:.6">FUEL</div><div style="width:80px;height:8px;background:rgba(255,255,255,.15);border-radius:4px;margin-top:4px;overflow:hidden"><div id="fuelbar" style="height:100%;width:100%;background:linear-gradient(90deg,#059669,#34d399)"></div></div></div>
+</div>
+<div id="speed"><div class="v" id="spd">0</div><div class="u">km/h</div></div>
+<div id="event"></div>
+<button id="pauseBtn" class="hidden">❚❚</button>
+</div>
+<div id="controls" class="hidden">
+<button class="btn" id="brake">BRAKE</button>
+<button class="btn" id="gas">GAS</button>
+</div>
+<div id="menu">
+<h1>RIDGE RACER</h1>
+<div class="sub">WILD TRAILS</div>
+<p style="color:#94a3b8;margin-bottom:24px;text-align:center;font-size:14px">Physics hill climb · Coins · Flips</p>
+<button class="play" id="startBtn">PLAY</button>
+<p style="color:#64748b;font-size:12px;margin-top:20px">← → / A D · Space · Touch on mobile</p>
+</div>
+<div id="over" class="hidden">
+<h2>RUN COMPLETE</h2>
+<div class="stats" id="stats"></div>
+<button class="play" id="retryBtn">RETRY</button>
+</div>
+<script src="#"></script>
+<!-- Full game script is live at ridge-racer-play.vercel.app -->
+<script>location.href='https://ridge-racer-play.vercel.app'</script>
+</body>
+</html>
