@@ -1,0 +1,37 @@
+export const GAME_VERSION = 1;
+
+export const PHYSICS = {
+  GRAVITY: 1.0,
+  TIME_SCALE: 1,
+};
+
+export const CAMERA = {
+  LOOK_AHEAD: 0.35,
+  SMOOTHING: 0.08,
+  SHAKE_DECAY: 0.9,
+  MIN_ZOOM: 0.7,
+  MAX_ZOOM: 1.15,
+};
+
+export const FUEL = {
+  BASE_CAPACITY: 100,
+  DRAIN_IDLE: 0.7,
+  DRAIN_THROTTLE: 2.2,
+  PICKUP_AMOUNT: 35,
+};
+
+export const REWARDS = {
+  DISTANCE_COIN_PER_METER: 0.15,
+  BRONZE_COIN: 1,
+  SILVER_COIN: 5,
+  GOLD_COIN: 10,
+  CRYSTAL_COIN: 50,
+  CHECKPOINT_BASE: 150,
+  AIRTIME_PER_SECOND: 8,
+  FLIP: 50,
+  DOUBLE_FLIP: 150,
+  PERFECT_LANDING: 40,
+};
+
+export const UPGRADE_COSTS = [100, 250, 500, 900, 1500, 2400, 3600, 5000];
+export const MAX_UPGRADE_LEVEL = 8;
